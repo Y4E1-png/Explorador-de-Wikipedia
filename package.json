@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
     "preview": "vite preview"
   },
   "dependencies": {
