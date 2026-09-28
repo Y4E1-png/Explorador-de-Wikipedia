@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const SavedCard = styled.article`
-  display: flex;
+  display: inline-flex;
+  vertical-align: top;
   flex-direction: column;
   min-width: 0;
   padding: 14px;
@@ -14,14 +15,14 @@ export const SavedCard = styled.article`
   width: 100%;
   margin-bottom: clamp(20px, 2.5vw, 36px);
   break-inside: avoid;
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 10px 12px 0 rgba(23, 28, 26, 0.2);
+    z-index: 1;
+    transform: translateY(-6px);
+    box-shadow: 12px 14px 0 rgba(23, 28, 26, 0.22);
   }
 
   @media (max-width: 620px) {

@@ -57,6 +57,7 @@ export const ReadingCount = styled.p`
 `;
 
 export const ArticlesGrid = styled.div`
+  padding-top: 8px;
   column-count: 3;
   column-gap: clamp(20px, 2.5vw, 36px);
 
