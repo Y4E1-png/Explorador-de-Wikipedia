@@ -65,14 +65,17 @@ export const NavigationBar = styled.nav`
   gap: 24px;
 
   a {
+    color: ${({ $isOverlay }) => $isOverlay ? '#d4f1e3' : '#F7F5F0'};
+    font-size: 18px;
     padding: 6px 0;
-    color: #C9CFCC;
     font-weight: 600;
     text-decoration: none;
     border-bottom: 2px solid transparent;
+    transition: transform 0.3s ease;
 
     &:hover {
-      color: #A8D5C3;
+      color: ${({ $isOverlay }) => $isOverlay ? '#f4f4f4' : '#85ccb0'};
+      transform: translateY(-2px);
     }
 
     &:focus-visible {
@@ -82,7 +85,7 @@ export const NavigationBar = styled.nav`
     }
 
     &.active {
-      color: #FFFFFF;
+      color: ${({ $isOverlay }) => $isOverlay ? '#00994d' : '#FFFFFF'};
       border-bottom-color: #F7F5F0;
     }
   }

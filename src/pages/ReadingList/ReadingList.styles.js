@@ -57,16 +57,16 @@ export const ReadingCount = styled.p`
 `;
 
 export const ArticlesGrid = styled.div`
-  padding-top: 8px;
-  column-count: 3;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: clamp(20px, 2.5vw, 36px);
 
   @media (max-width: 950px) {
-    column-count: 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   @media (max-width: 620px) {
-    column-count: 1;
+    grid-template-columns: 1fr;
   }
 `;
 

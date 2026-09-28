@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const SavedCard = styled.article`
-  display: inline-flex;
+  display: inline-block;
   vertical-align: top;
   flex-direction: column;
   min-width: 0;
@@ -122,10 +122,6 @@ export const CardDescription = styled.p`
   line-height: 1.6;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
 `;
 
 export const CardActions = styled.div`

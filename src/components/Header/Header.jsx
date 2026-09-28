@@ -36,7 +36,7 @@ function Header({ isOverlay }) {
         <span>Explorador de Wikipedia</span>
       </Brand>
 
-      <NavigationBar aria-label="Navegación principal">
+      <NavigationBar $isOverlay={isOverlay} aria-label="Navegación principal">
         <NavLink to="/">Inicio</NavLink>
         <NavLink to="/mis-lecturas">Mis lecturas</NavLink>
       </NavigationBar>

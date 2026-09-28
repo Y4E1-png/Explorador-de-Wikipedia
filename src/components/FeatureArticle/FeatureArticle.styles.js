@@ -107,23 +107,26 @@ export const FeatureDescription = styled.p`
 `
 
 export const FeatureLink = styled(Link)`
+  grid-area: link;
+  align-self: center;
   display: inline-flex;
-  padding: 10px 18px;
   color: #202522;
   font-weight: 600;
   text-decoration: none;
-  background-color: #F7F5F0;
-  border-radius: 999px;
   white-space: nowrap;
-  grid-area: link;
-  align-self: center;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
 
-  &:hover {
+  span {
+    will-change: transform;
+    display: inline-flex;
+    padding: 10px 18px;
+    background-color: #F7F5F0;
+    border-radius: 999px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  &:hover span {
     background-color: #A8D5C3;
-    transform: translateY(-3px)
+    transform: translateY(-4px);
   }
 
   &:focus-visible {

@@ -36,7 +36,7 @@ const SavedArticleCard = ({ article }) => {
       <CardInformation>
         {article.description && (
           <CardDescription>
-            {article.description}
+            {article.description.charAt(0).toUpperCase() + article.description.slice(1)}
           </CardDescription>
         )}
         <CardActions>

@@ -9,7 +9,7 @@ import LoadingIndicator from "../LoadingIndicator/LoadingIndicator"
 
 function FeatureArticle () {
 
-  const selectedArticle = "Elecciones_generales_de_Brasil_de_2026"
+  const selectedArticle = "Asamblea_General_de_las_Naciones_Unidas"
   
   const { article, articleImg, isLoading, error } = useWikipediaArticle (selectedArticle)
 
@@ -48,7 +48,7 @@ function FeatureArticle () {
         )}
 
         <FeatureLink to= {`/articulo/${encodeURIComponent(article.key)}`}>
-          Leer más
+          <span>Leer más</span>
         </FeatureLink>
       </FeatureContent>
     </FeatureContainer>

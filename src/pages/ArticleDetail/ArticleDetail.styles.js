@@ -71,7 +71,7 @@ export const DetailBrand = styled(Link)`
 
   &:hover {
     background-color: rgba(23, 28, 26, 0.88);
-    transform: translateY(-1px);
+    transform: translateY(-3px);
   }
 
   img {
@@ -383,6 +383,7 @@ export const ReadArticleLink = styled.a`
     transform 180ms ease;
 
   span {
+    will-change: transform;
     padding: 10px 18px;
     color: #1c201c;
     background-color: rgba(247, 245, 240, 0.36);
@@ -393,16 +394,13 @@ export const ReadArticleLink = styled.a`
     font-size: 13px;
     letter-spacing: 0.4px;
     text-transform: none;
-    transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease;
+    transition: color 500ms ease, background-color 180ms ease, border-color 180ms ease, transform 0.5s ease;
   }
 
   svg {
     width: 44px;
     height: 20px;
-    transition: transform 180ms ease;
+    transition: transform 500ms ease;
   }
 
   &:hover {
