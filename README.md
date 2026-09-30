@@ -1,81 +1,147 @@
-# Explorador de Wikipedia
+English | [Leer en español](README.es.md)
 
-Aplicación web para buscar artículos de Wikipedia en español, consultar su introducción y guardar lecturas para después. Fue desarrollada como tercer proyecto del curso de Front-End.
+# Wikipedia Explorer
 
-**Sitio publicado:** [wikipedia-explorer.web.app](https://wikipedia-explorer.web.app)  
-**Repositorio:** [Explorador-de-Wikipedia](https://github.com/Y4E1-png/Explorador-de-Wikipedia)
+A web application for searching Spanish Wikipedia articles, reading their introductions, and saving articles for later.
 
-## Funcionalidades
+Developed as the third project of the Front-End Development program at EBAC.
 
-- Buscar artículos de Wikipedia en español.
-- Consultar los resultados en tarjetas con título, descripción e imagen cuando está disponible.
-- Leer la introducción de un artículo y abrir el contenido completo en Wikipedia.
-- Guardar y quitar artículos de «Mis lecturas».
-- Conservar las lecturas guardadas al recargar la página mediante `localStorage`.
-- Mostrar estados de carga, error y ausencia de resultados.
-- Adaptar la interfaz a pantallas de escritorio y móviles.
+**Live demo:** [Wikipedia Explorer](https://wikipedia-explorer.web.app/)
 
-## Tecnologías
+## Features
 
-React, Vite, JavaScript, styled-components, React Router, Redux Toolkit, Axios y Jest. Los datos proceden de la API de MediaWiki.
+- Search for articles on Spanish Wikipedia.
+- Display results as cards with titles, descriptions, and images when available.
+- Read an article's introduction and open the complete article on Wikipedia.
+- Add and remove articles from a personal reading list.
+- Preserve saved articles after reloading the page through localStorage.
+- Display loading states, request errors, and searches without results.
+- Adapt the interface to desktop and mobile screens.
 
-## Páginas
+## Technologies
 
-- `/`: inicio y búsqueda.
-- `/articulo/:articleKey`: detalle de un artículo.
-- `/mis-lecturas`: artículos guardados.
+- **React and React DOM:** reusable components and interface rendering.
+- **JavaScript, HTML, and CSS:** application logic, structure, and styling.
+- **Vite:** development server and production builds.
+- **styled-components:** component styles and global styles.
+- **React Router:** navigation between search results, article details, and saved readings.
+- **Redux Toolkit and React Redux:** management of the saved reading list.
+- **Axios:** requests to Wikipedia's MediaWiki API.
+- **Jest and React Testing Library:** automated tests.
+- **ESLint:** code checks.
 
-## Cómo ejecutar el proyecto
+Article information and images are retrieved through the MediaWiki API.
 
-Se necesitan Node.js y npm. Después de descargar el repositorio, abre una terminal en la carpeta del proyecto y ejecuta:
+## Pages
+
+| Route | Purpose |
+|---|---|
+| `/` | Homepage and article search. |
+| `/articulo/:articleKey` | Article detail page. |
+| `/mis-lecturas` | Saved reading list. |
+
+## Getting started
+
+### Requirements
+
+- Node.js and npm installed.
+- Git installed to clone the repository.
+- An internet connection to install dependencies and retrieve Wikipedia content.
+
+### Installation
+
+1. Clone the repository and open its folder:
+
+```bash
+git clone https://github.com/Y4E1-png/Explorador-de-Wikipedia.git
+cd Explorador-de-Wikipedia
+```
+
+2. Install the dependencies:
 
 ```bash
 npm install
+```
+
+3. Start the development server:
+
+```bash
 npm run dev
 ```
 
-La terminal mostrará la dirección local para abrir la aplicación.
+Open the local address displayed in the terminal.
 
-## Comandos disponibles
+## Available commands
 
-| Comando | Función |
+| Command | Description |
 |---|---|
-| `npm run dev` | Inicia el servidor de desarrollo. |
-| `npm test` | Ejecuta las pruebas con Jest. |
-| `npm run test:watch` | Vuelve a ejecutar las pruebas cuando cambian los archivos. |
-| `npm run lint` | Revisa el código con ESLint. |
-| `npm run build` | Genera la versión de producción en `dist`. |
-| `npm run preview` | Permite revisar localmente la versión generada. |
+| `npm run dev` | Starts the development server. |
+| `npm test` | Runs the tests with Jest. |
+| `npm run test:watch` | Runs tests again when files change. |
+| `npm run lint` | Checks the code with ESLint. |
+| `npm run build` | Generates the production version in `dist`. |
+| `npm run preview` | Serves the generated production version locally. |
 
-## Pruebas
+Run `npm run build` before using `npm run preview`.
 
-El proyecto incluye pruebas para componentes, funciones auxiliares, custom hooks, peticiones a la API y lógica de Redux. Cubren, entre otros casos, la búsqueda, la carga de artículos, los errores, la extracción de la introducción y las acciones para guardar y quitar lecturas.
+## Usage example
 
-Para ejecutarlas:
+The application interface is in Spanish.
+
+1. Enter a topic, such as `Astronomía`, in the search field and press Enter.
+2. Browse the article cards and click a card's heart icon to save it.
+3. Open **Mis lecturas** from the navigation.
+4. Reload the page to check that the saved article remains available.
+5. Click **Leer artículo** to open its introduction.
+6. Use the bookmark icon on the article detail page to return to saved readings.
+7. Remove a saved article using its trash icon.
+
+The article detail page also includes a link to read the complete article on Wikipedia.
+
+## Tests
+
+The project includes tests for components, utility functions, custom hooks, API requests, and Redux logic.
+
+They cover article searches, loading states, errors, introduction extraction, and actions for adding and removing saved readings.
+
+To run the tests:
 
 ```bash
 npm test
 ```
 
-## Recorrido de los datos
+## Data flow
 
-El texto de búsqueda se envía a Wikipedia mediante Axios. Los resultados llegan al estado de React y se muestran en tarjetas. Al abrir una tarjeta, React Router utiliza el identificador del artículo para mostrar su página de detalle.
+The search text is sent to Wikipedia through Axios. The results are stored in React state and displayed as article cards.
 
-Las lecturas guardadas se administran con Redux Toolkit. `localStorage` permite recuperarlas después de recargar la página.
+When an article is opened, React Router uses its identifier to display the corresponding detail page.
 
-## Organización principal
+Saved readings are managed with Redux Toolkit. localStorage stores the reading list so it can be restored after reloading the page.
+
+## Main structure
 
 ```text
 src/
-├── components/  Componentes reutilizables
-├── hooks/       Búsqueda y carga de artículos
-├── pages/       Páginas de la aplicación
-├── services/    Peticiones a Wikipedia
-├── store/       Estado de las lecturas guardadas
-├── styles/      Estilos globales
-└── utils/       Funciones auxiliares
+├── components/  Reusable components
+├── hooks/       Article searches and loading
+├── pages/       Application pages
+├── services/    Requests to Wikipedia
+├── store/       Saved reading list state
+├── styles/      Global styles
+└── utils/       Utility functions
 ```
 
-## Créditos
+## Credits
 
-Los textos y las imágenes consultados mediante la API proceden de Wikipedia y Wikimedia Commons. La autoría y las condiciones de uso de cada contenido pueden consultarse desde su artículo o archivo original. La interfaz del explorador fue creada con fines educativos.
+Article texts and images retrieved through the API come from Wikipedia and Wikimedia Commons.
+
+Content attribution and usage terms can be consulted on the original article or media file. The explorer's interface was created for educational purposes.
+
+## Author
+
+Developed by **Yael Aguilar** as part of the Front-End Development program at EBAC.
+
+[GitHub profile](https://github.com/Y4E1-png)
+
+
+
