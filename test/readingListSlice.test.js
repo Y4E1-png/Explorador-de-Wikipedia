@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals'
-import readingListReducer, { addArticle, removeArticle } from './readingListSlice'
+import readingListReducer, { addArticle, removeArticle } from '../src/store/readingListSlice'
 
 const article = {
   key: 'México',

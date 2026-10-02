@@ -9,20 +9,20 @@ import {
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, jest, test } from '@jest/globals'
-import ArticleCard from './ArticleCard/ArticleCard'
-import FeatureArticle from './FeatureArticle/FeatureArticle'
-import Header from './Header/Header'
-import LoadingIndicator from './LoadingIndicator/LoadingIndicator'
-import SavedArticleCard from './SavedArticleCard/SavedArticleCard'
-import ArticleDetail from '../pages/ArticleDetail/ArticleDetail'
-import Home from '../pages/Home/Home'
-import ReadingList from '../pages/ReadingList/ReadingList'
-import readingListReducer from '../store/readingListSlice'
-import { useWikipediaArticle } from '../hooks/useWikipediaArticle'
-import { useWikipediaSearch } from '../hooks/useWikipediaSearch'
+import ArticleCard from '../src/components/ArticleCard/ArticleCard'
+import FeatureArticle from '../src/components/FeatureArticle/FeatureArticle'
+import Header from '../src/components/Header/Header'
+import LoadingIndicator from '../src/components/LoadingIndicator/LoadingIndicator'
+import SavedArticleCard from '../src/components/SavedArticleCard/SavedArticleCard'
+import ArticleDetail from '../src/pages/ArticleDetail/ArticleDetail'
+import Home from '../src/pages/Home/Home'
+import ReadingList from '../src/pages/ReadingList/ReadingList'
+import readingListReducer from '../src/store/readingListSlice'
+import { useWikipediaArticle } from '../src/hooks/useWikipediaArticle'
+import { useWikipediaSearch } from '../src/hooks/useWikipediaSearch'
 
-jest.mock('../hooks/useWikipediaArticle')
-jest.mock('../hooks/useWikipediaSearch')
+jest.mock('../src/hooks/useWikipediaArticle')
+jest.mock('../src/hooks/useWikipediaSearch')
 
 const featuredArticle = {
   key: 'Asamblea_General_de_las_Naciones_Unidas',

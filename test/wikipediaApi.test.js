@@ -4,7 +4,7 @@ import {
   getWikipediaArticle,
   getWikipediaImage,
   searchWikipediaArticles,
-} from './wikipediaApi'
+} from '../src/services/wikipediaApi'
 
 jest.mock('axios')
 

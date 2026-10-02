@@ -1,14 +1,14 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
 import { beforeEach, describe, expect, jest, test } from '@jest/globals'
-import { useWikipediaArticle } from './useWikipediaArticle'
-import { useWikipediaSearch } from './useWikipediaSearch'
+import { useWikipediaArticle } from '../src/hooks/useWikipediaArticle'
+import { useWikipediaSearch } from '../src/hooks/useWikipediaSearch'
 import {
   getWikipediaArticle,
   getWikipediaImage,
   searchWikipediaArticles,
-} from '../services/wikipediaApi'
+} from '../src/services/wikipediaApi'
 
-jest.mock('../services/wikipediaApi')
+jest.mock('../src/services/wikipediaApi')
 
 describe('useWikipediaSearch', () => {
   beforeEach(() => {

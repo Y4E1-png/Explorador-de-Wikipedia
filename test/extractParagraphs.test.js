@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals'
-import { extractParagraphs } from './extractParagraphs'
+import { extractParagraphs } from '../src/utils/extractParagraphs'
 
 describe('extractParagraphs', () => {
   test('extrae los párrafos de la introducción y elimina las referencias', () => {
