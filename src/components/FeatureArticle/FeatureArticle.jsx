@@ -9,7 +9,7 @@ import LoadingIndicator from "../LoadingIndicator/LoadingIndicator"
 
 function FeatureArticle () {
 
-  const selectedArticle = "Asamblea_General_de_las_Naciones_Unidas"
+  const selectedArticle = "Semana_Mundial_del_Espacio"
   
   const { article, articleImg, isLoading, error } = useWikipediaArticle (selectedArticle)
 
